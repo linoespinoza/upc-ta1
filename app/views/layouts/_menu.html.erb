@@ -1,10 +1,13 @@
-<li><%= link_to "About Me", pages_about_me_path %></li>
-<li><%= link_to "Services", pages_services_path %></li>
-<li><%= link_to "Sign up", new_user_registration_path %></li>
+<!-- navbar -->
+<li><%= link_to "About Us", pages_about_me_path, { :class => "nav-item nav-link text-white" } %></li>
+<li><%= link_to "Services", pages_services_path, { :class => 'nav-item nav-link text-white' } %></li>
 <li>
-  <% if current_user %> 
-  <%= link_to 'Logout', destroy_user_session_path, method: :delete %>
-<% else %>
-    <%= link_to 'Login', new_user_session_path %>
+  <% if current_user %>
+    <%= link_to 'Logout', destroy_user_session_path, { :class => "nav-item nav-link text-white", method: :delete} %>
+  <% else %>
+    <%= link_to 'Login', new_user_session_path, { :class => "nav-item nav-link text-white" } %>
 <% end %>
 </li>
+<li><%= link_to "Sign up", new_user_registration_path, { :class => "nav-item nav-link text-white" } %></li>
+
+<!-- /navbar -->
